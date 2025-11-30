@@ -8,7 +8,7 @@ namespace OhNoeTicTacToe
 {
     public static class UIMethods
     {
-        public static void DisplayTicTacToe()
+        public static void DisplayTicTacToeBoard()
         {
             Console.WriteLine("Welcome to TicTacToe!");
         }
