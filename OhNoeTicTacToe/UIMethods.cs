@@ -30,4 +30,9 @@ public static class UIMethods
         }
         Console.WriteLine();
     }
+
+    public static void UserSymbol(char symbol)
+    {
+        
+    }
 }
