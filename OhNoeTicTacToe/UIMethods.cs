@@ -4,42 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OhNoeTicTacToe
-{
-    public static class UIMethods
+namespace OhNoeTicTacToe;
+public static class UIMethods
+{ 
+    public static void DisplayTicTacToeBoard(char [,] board)
     {
-        public static void DisplayTicTacToeBoard()
+        int BOARD_SIZE = board.GetLength(0);
+        for (int row = 0; row < BOARD_SIZE; row++)
         {
-            const int BOARD_SIZE = 3;
-            char[,] board;
-            board = new char[BOARD_SIZE, BOARD_SIZE];
-
-            for (int row = 0; row < BOARD_SIZE; row++)
+            for (int col = 0; col < BOARD_SIZE; col++)
             {
-                for (int col = 0; col < BOARD_SIZE; col++)
-                {
-                    board[row, col] = ' ';
-                }
+                Console.Write($"{board[row, col]}");
+                if (col < BOARD_SIZE - 1) Console.Write(" | ");
             }
-
-            for (int row = 0; row < BOARD_SIZE; row++)
+            Console.WriteLine();
+            if (row < BOARD_SIZE - 1)
             {
-                for (int col = 0; col < BOARD_SIZE; col++)
+                for (int i = 0; i < BOARD_SIZE; i++)
                 {
-                    Console.Write($"{board[row, col]}");
-                    if (col < BOARD_SIZE - 1) Console.Write(" | ");
-                }
-                Console.WriteLine();
-                if (row < BOARD_SIZE - 1)
-                {
-                    for (int i = 0; i < BOARD_SIZE; i++)
-                    {
-                        Console.Write("---");
-                        if (i < BOARD_SIZE - 1) Console.Write("+");
-                    }
+                    Console.Write("---");
+                    if (i < BOARD_SIZE - 1) Console.Write("+");
                 }
                 Console.WriteLine();
             }
         }
+        Console.WriteLine();
     }
 }
