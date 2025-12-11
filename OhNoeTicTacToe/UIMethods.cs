@@ -31,6 +31,17 @@ public static class UIMethods
         Console.WriteLine();
     }
 
+    public static void UserBoardMark(string boardMarked)
+    {
+       Console.WriteLine("Which place on the board you would like next: ");
+       Console.WriteLine("Make your input by selecting the row 1st and column 2nd. Example: [0, 2]\n " +
+                         "input 0 = 1st row/col\n" +
+                         "input 1 = 2nd row/col\n" +
+                         "input 2 = 3rd row/col\n");
+       boardMarked =  // input needs to be passed within an array to choose the spot. [row, col]
+      
+    }
+ 
     public static void UserSymbol(char symbol)
     {
         

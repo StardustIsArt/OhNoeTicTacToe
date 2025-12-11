@@ -5,6 +5,7 @@ public static class Program
     {
         char[,] board = new char[GameConstants.BOARD_SIZE, GameConstants.BOARD_SIZE];
         GameLogic.InitializeBoard(board);
+        UIMethods.UserBoardMark();
         bool gameOver = false;
         while (!gameOver)
         {
