@@ -31,19 +31,23 @@ public static class UIMethods
         Console.WriteLine();
     }
 
-    public static void UserBoardMark(string boardMarked)
+    public static void DisplayGamePlay()
     {
-       Console.WriteLine("Which place on the board you would like next: ");
-       Console.WriteLine("Make your input by selecting the row 1st and column 2nd. Example: [0, 2]\n " +
-                         "input 0 = 1st row/col\n" +
-                         "input 1 = 2nd row/col\n" +
-                         "input 2 = 3rd row/col\n");
-       boardMarked =  // input needs to be passed within an array to choose the spot. [row, col]
-      
+        Console.WriteLine("Which place on the board you would like next: ");
+        Console.WriteLine("Make your input by selecting the row 1st and column 2nd. Example: [0, 2]\n " +
+                          "input 0 = 1st row/col\n" +
+                          "input 1 = 2nd row/col\n" +
+                          "input 2 = 3rd row/col\n");
     }
- 
-    public static void UserSymbol(char symbol)
+    public static void ReadArrayInput(int[] array)
     {
-        
+        for  (int i = 0; i < array.Length; i++)
+        {
+            Console.Write($"Enter input {i}: [ , ]");
+            while (!int.TryParse(Console.ReadLine(), out array[i]))
+            {
+                Console.WriteLine("Invalid input. Please enter valid integer: ");
+            }
+        }
     }
 }
