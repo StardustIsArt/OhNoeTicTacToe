@@ -41,23 +41,25 @@ public static class UIMethods
                           "input 1 = 2nd row/col\n" +
                           "input 2 = 3rd row/col\n");
     }
-    public static void GetPlayerMove(int[] array)
+    public static (int row, int col) GetPlayerMove()
     {
-        Console.WriteLine("Select which row: ");
-        int row = Int32.Parse(Console.ReadLine());
-        Console.WriteLine("Select which column: ");
-        int col = Int32.Parse(Console.ReadLine());
+        int row = GetValidInput("Select which row: ");
+        int col = GetValidInput("Select which column: ");
+        return (row, col);
     }
 
-    public static void GetValidInput(int[] array)
+    public static int GetValidInput(string prompt)
     {
-        for  (int i = 0; i < array.Length; i++)
+        while (true)
         {
-            Console.Write("Enter input: [ , ]");
-            while (!int.TryParse(Console.ReadLine(), out array[i]))
+            Console.Write(prompt);
+            string userInput = Console.ReadLine();
+            if (int.TryParse(userInput, out int input) && input >= GameConstants.BOARD_START &&
+                input < GameConstants.BOARD_SIZE)
             {
-                Console.WriteLine("Invalid input. Please enter valid integer: ");
+                return input;
             }
+            Console.WriteLine("Invalid input. Try again. Accepted input: 0, 1, 2 ");
         }
     }
 }

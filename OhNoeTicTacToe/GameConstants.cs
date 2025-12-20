@@ -9,6 +9,7 @@ namespace OhNoeTicTacToe;
 public static class GameConstants
 {
     public const int BOARD_SIZE = 3;
+    public const int BOARD_START = 0;   
     public static char UserSymbol = 'X';
     public static char OpponentAISymbol = 'O';
     
