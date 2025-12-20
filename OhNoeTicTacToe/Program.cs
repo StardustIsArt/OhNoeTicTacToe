@@ -1,4 +1,5 @@
-﻿using OhNoeTicTacToe;
+﻿using System.Data;
+using OhNoeTicTacToe;
 public static class Program
 {
     static void Main(string[] args)
@@ -7,7 +8,7 @@ public static class Program
         GameLogic.InitializeBoard(board);
         UIMethods.DisplayGamePlay();
       
-        UIMethods.ReadArrayInput();
+        UIMethods.GetPlayerMove(UIMethods.row, UIMethods.col);
         bool gameOver = false;
         while (!gameOver)
         {
