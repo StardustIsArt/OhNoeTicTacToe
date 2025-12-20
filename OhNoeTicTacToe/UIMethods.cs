@@ -54,8 +54,7 @@ public static class UIMethods
         {
             Console.Write(prompt);
             string userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out int input) && input >= GameConstants.BOARD_START &&
-                input < GameConstants.BOARD_SIZE)
+            if (int.TryParse(userInput, out int input) && input is >= GameConstants.BOARD_START and < GameConstants.BOARD_SIZE)
             {
                 return input;
             }

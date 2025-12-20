@@ -17,7 +17,15 @@ public static class GameLogic
             }
         }
     }
-    
-    
+
+    public static bool PlaceMark(char[,] board, int row, int col, char mark)
+    {
+        if (board[row, col] != ' ')
+        {
+            return false;
+        }
+        board[row, col] = mark;
+        return true;
+    }
     
 }

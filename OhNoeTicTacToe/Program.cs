@@ -8,10 +8,12 @@ public static class Program
         GameLogic.InitializeBoard(board);
         UIMethods.DisplayGamePlay();
       
-        UIMethods.GetPlayerMove(UIMethods.row, UIMethods.col);
+        UIMethods.GetPlayerMove();
+        
         bool gameOver = false;
         while (!gameOver)
         {
+            UIMethods.DisplayTicTacToeBoard(board);
             if (GameConstants.UserSymbol == 'X')
             {
                 
