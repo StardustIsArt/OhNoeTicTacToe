@@ -61,4 +61,14 @@ public static class UIMethods
             Console.WriteLine("Invalid input. Try again. Accepted input: 0, 1, 2 ");
         }
     }
+
+    public static string DisplayAlreadyTaken()
+    {
+        while (true)
+        {
+            Console.WriteLine("This spot has already been selected. Please choose open spot.");
+            Console.ReadLine();
+            continue;
+        }
+    }
 }

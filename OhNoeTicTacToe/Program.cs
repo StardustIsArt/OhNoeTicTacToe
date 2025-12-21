@@ -7,16 +7,18 @@ public static class Program
         char[,] board = new char[GameConstants.BOARD_SIZE, GameConstants.BOARD_SIZE];
         GameLogic.InitializeBoard(board);
         UIMethods.DisplayGamePlay();
-      
-        UIMethods.GetPlayerMove();
         
         bool gameOver = false;
         while (!gameOver)
         {
             UIMethods.DisplayTicTacToeBoard(board);
-            if (GameConstants.UserSymbol == 'X')
+            if (GameConstants.USER_SYMBOL == 'X')
             {
-                
+                UIMethods.GetPlayerMove();
+                if (!GameLogic.PlaceMark())
+                {
+                    UIMethods.DisplayAlreadyTaken();
+                }
             }
         }
         UIMethods.DisplayTicTacToeBoard(board);
