@@ -62,7 +62,7 @@ public static class UIMethods
         }
     }
 
-    public static string DisplayAlreadyTaken()
+    public static void DisplayAlreadyTaken()
     {
         while (true)
         {
@@ -70,5 +70,10 @@ public static class UIMethods
             Console.ReadLine();
             continue;
         }
+    }
+
+    public static void DisplayAITurn()
+    {
+        Console.WriteLine("AI is thinking...");
     }
 }
