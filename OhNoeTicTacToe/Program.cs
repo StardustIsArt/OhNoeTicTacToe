@@ -25,6 +25,7 @@ public static class Program
             else
             {
                 UIMethods.DisplayAITurn();
+                GameLogic.AIMove(board, GameConstants.AI_SYMBOL);
             }
         }
         UIMethods.DisplayTicTacToeBoard(board);

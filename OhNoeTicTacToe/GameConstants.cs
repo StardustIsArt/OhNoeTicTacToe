@@ -11,7 +11,7 @@ public static class GameConstants
     public const int BOARD_SIZE = 3;
     public const int BOARD_START = 0;   
     public static char USER_SYMBOL = 'X';
-    public static char OPPONENT_AI_SYMBOL = 'O';
+    public static char AI_SYMBOL = 'O';
     
    
 }

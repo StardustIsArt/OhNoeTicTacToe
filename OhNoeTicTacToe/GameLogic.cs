@@ -17,7 +17,6 @@ public static class GameLogic
             }
         }
     }
-
     public static bool PlaceMark(char[,] board, int row, int col, char mark)
     {
         if (board[row, col] != ' ')
@@ -27,5 +26,17 @@ public static class GameLogic
         board[row, col] = mark;
         return true;
     }
-    
+
+    public static void AIMove(char[,] board, char AIsymbol)
+    {
+        Random random = new Random();
+        int row, col;
+        do
+        {
+            row = random.Next(0, GameConstants.BOARD_SIZE);
+            col = random.Next(0, GameConstants.BOARD_SIZE);
+        } while (board[row, col] != ' ');
+
+        board[row, col] = AIsymbol;
+    }
 }
