@@ -31,7 +31,6 @@ public static class UIMethods
         }
         Console.WriteLine();
     }
-
     public static void DisplayGamePlay()
     {
         Console.WriteLine("Welcome to TicTacToe!\n" +
@@ -48,7 +47,6 @@ public static class UIMethods
         int col = GetValidInput("Select which column: ");
         return (row, col);
     }
-
     public static int GetValidInput(string prompt)
     {
         while (true)
@@ -62,7 +60,6 @@ public static class UIMethods
             Console.WriteLine("Invalid input. Try again. Accepted input: 0, 1, 2 ");
         }
     }
-
     public static void DisplayAlreadyTaken()
     {
         while (true)
@@ -72,13 +69,11 @@ public static class UIMethods
             continue;
         }
     }
-
     public static void DisplayAITurn()
     {
         Console.WriteLine("AI is thinking...");
         
     }
-
     public static void DisplayWinner(char[,] board, char winner)
     {
         Console.Clear();
@@ -88,5 +83,13 @@ public static class UIMethods
         Console.WriteLine();
         Console.WriteLine("Press Enter to exit...");
         Console.WriteLine();
+    }
+
+    public static void DisplayDraw(char[,] board)
+    {
+        Console.Clear();
+        DisplayTicTacToeBoard(board);
+        Console.WriteLine($"\n Player {GameConstants.USER_SYMBOL} Draw!");
+        
     }
 }

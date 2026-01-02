@@ -69,4 +69,13 @@ public static class GameLogic
         }
         return false;
     }
-}
+
+    public static bool IsBoardFull(char[,] board)
+    {
+        foreach (char c in board)
+            if (c != ' ')
+                return false;
+        return true;
+        }
+    }
+

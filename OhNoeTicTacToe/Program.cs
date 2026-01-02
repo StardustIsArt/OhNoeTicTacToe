@@ -38,6 +38,12 @@ public static class Program
                 break;
             }
 
+            else if (GameLogic.IsBoardFull(board))
+            {
+                UIMethods.DisplayDraw(board);
+                break;
+            }
+
             if (player == GameConstants.USER_SYMBOL)
             {
                 player = GameConstants.AI_SYMBOL;
