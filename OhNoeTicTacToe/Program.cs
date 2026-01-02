@@ -12,7 +12,7 @@ public static class Program
         while (!gameOver)
         {
             UIMethods.DisplayTicTacToeBoard(board);
-            if (GameConstants.USER_SYMBOL == player)
+            if (player == GameConstants.USER_SYMBOL)
             {
                 var (row, col) = UIMethods.GetPlayerMove();
                 if (!GameLogic.PlaceMark(board, row, col, player))
@@ -37,6 +37,16 @@ public static class Program
                 UIMethods.DisplayWinner(board, player);
                 break;
             }
+
+            if (player == GameConstants.USER_SYMBOL)
+            {
+                player = GameConstants.AI_SYMBOL;
+            }
+            else
+            {
+               player = GameConstants.USER_SYMBOL;
+            }
+            Console.Clear();
         }
     }
 }
