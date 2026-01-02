@@ -41,7 +41,7 @@ public static class GameLogic
         board[row, col] = AIsymbol;
     }
 
-    public static bool CheckWin(char[,] board, char mark)
+    public static bool CheckWinner(char[,] board, char mark)
     {
         int size = board.GetLength(0);
         for (int r = 0; r < size; r++)

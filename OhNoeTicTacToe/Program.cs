@@ -32,9 +32,9 @@ public static class Program
                 GameLogic.AIMove(board, GameConstants.AI_SYMBOL);
             }
 
-            if (GameLogic.CheckWin(board, player))
+            if (GameLogic.CheckWinner(board, player))
             {
-                UIMethods.DisplayWinner(player):
+                UIMethods.DisplayWinner(board, player);
                 break;
             }
         }

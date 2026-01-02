@@ -78,4 +78,15 @@ public static class UIMethods
         Console.WriteLine("AI is thinking...");
         
     }
+
+    public static void DisplayWinner(char[,] board, char winner)
+    {
+        Console.Clear();
+        DisplayTicTacToeBoard(board);
+        
+        Console.WriteLine($"\n Player {winner} Wins!");
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to exit...");
+        Console.WriteLine();
+    }
 }
