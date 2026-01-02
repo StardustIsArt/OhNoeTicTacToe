@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,5 +39,34 @@ public static class GameLogic
         } while (board[row, col] != ' ');
 
         board[row, col] = AIsymbol;
+    }
+
+    public static bool CheckWin(char[,] board, char mark)
+    {
+        int size = board.GetLength(0);
+        for (int r = 0; r < size; r++)
+        {
+            if (board[r, 0] == mark && board[r, 1] == mark && board[r, 2] == mark)
+            {
+                return true;
+            }
+        }
+        for (int c = 0; c < size; c++)
+        {
+            if (board[0, c] == mark && board[1, c] == mark && board[2, c] == mark)
+            {
+                return true;
+            }
+        }
+        if (board[0, 0] == mark && board[1, 1] == mark && board[2, 2] == mark)
+        {
+            return true;
+        }
+
+        if (board[0, 2] == mark && board[1, 1] == mark && board[2, 0] == mark)
+        {
+            return true;
+        }
+        return false;
     }
 }

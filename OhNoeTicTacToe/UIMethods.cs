@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,7 @@ public static class UIMethods
         while (true)
         {
             Console.WriteLine("This spot has already been selected. Please choose open spot.");
-            Console.ReadLine();
+            GetPlayerMove();
             continue;
         }
     }
@@ -75,5 +76,6 @@ public static class UIMethods
     public static void DisplayAITurn()
     {
         Console.WriteLine("AI is thinking...");
+        
     }
 }

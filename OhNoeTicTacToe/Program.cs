@@ -11,24 +11,33 @@ public static class Program
         bool gameOver = false;
         while (!gameOver)
         {
-            var (row, col) = UIMethods.GetPlayerMove();
             UIMethods.DisplayTicTacToeBoard(board);
             if (GameConstants.USER_SYMBOL == player)
             {
-                UIMethods.GetPlayerMove();
+                var (row, col) = UIMethods.GetPlayerMove();
                 if (!GameLogic.PlaceMark(board, row, col, player))
                 {
                     UIMethods.DisplayAlreadyTaken();
+                    System.Threading.Thread.Sleep(300);
+                    UIMethods.DisplayTicTacToeBoard(board);
                     continue;
                 }
+                Console.Clear();
+                System.Threading.Thread.Sleep(225);
             }
             else
             {
                 UIMethods.DisplayAITurn();
+                System.Threading.Thread.Sleep(600);
                 GameLogic.AIMove(board, GameConstants.AI_SYMBOL);
             }
+
+            if (GameLogic.CheckWin(board, player))
+            {
+                UIMethods.DisplayWinner(player):
+                break;
+            }
         }
-        UIMethods.DisplayTicTacToeBoard(board);
     }
 }
 
