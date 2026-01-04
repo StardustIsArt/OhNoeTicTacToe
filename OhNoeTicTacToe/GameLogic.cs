@@ -28,7 +28,7 @@ public static class GameLogic
         return true;
     }
 
-    public static void AIMove(char[,] board, char AIsymbol)
+    public static void UpdateBoardWithAIMove(char[,] board, char AIsymbol)
     {
         Random random = new Random();
         int row, col;

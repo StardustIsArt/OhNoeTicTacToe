@@ -29,7 +29,7 @@ public static class Program
             {
                 UIMethods.DisplayAITurn();
                 System.Threading.Thread.Sleep(600);
-                GameLogic.AIMove(board, GameConstants.AI_SYMBOL);
+                GameLogic.UpdateBoardWithAIMove(board, GameConstants.AI_SYMBOL);
             }
 
             if (GameLogic.CheckWinner(board, player))
