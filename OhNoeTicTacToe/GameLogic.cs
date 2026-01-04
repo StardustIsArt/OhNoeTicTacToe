@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace OhNoeTicTacToe;
 public static class GameLogic
 {
+    private static readonly Random random = new Random();
     public static void InitializeBoard(char[,] board)
     {
         for (int row = 0; row < board.GetLength(0); row++)
@@ -27,7 +28,7 @@ public static class GameLogic
         board[row, col] = mark;
         return true;
     }
-
+    
     public static void UpdateBoardWithAIMove(char[,] board, char AIsymbol)
     {
         Random random = new Random();
