@@ -45,26 +45,26 @@ public static class GameLogic
     public static bool CheckWinner(char[,] board, char mark)
     {
         int size = board.GetLength(0);
-        for (int r = 0; r < size; r++)
+        for (int r = GameConstants.TOP_LINE; r < size; r++)
         {
-            if (board[r, 0] == mark && board[r, 1] == mark && board[r, 2] == mark)
+            if (board[r, GameConstants.TOP_LINE] == mark && board[r, GameConstants.MID_LINE] == mark && board[r, GameConstants.BOT_LINE] == mark)
             {
                 return true;
             }
         }
         for (int c = 0; c < size; c++)
         {
-            if (board[0, c] == mark && board[1, c] == mark && board[2, c] == mark)
+            if (board[GameConstants.LEFT_LINE, c] == mark && board[GameConstants.MID_LINE, c] == mark && board[GameConstants.RIGHT_LINE, c] == mark)
             {
                 return true;
             }
         }
-        if (board[0, 0] == mark && board[1, 1] == mark && board[2, 2] == mark)
+        if (board[GameConstants.LEFT_LINE, GameConstants.TOP_LINE] == mark && board[GameConstants.MID_LINE, GameConstants.MID_LINE] == mark && board[GameConstants.RIGHT_LINE, GameConstants.BOT_LINE] == mark)
         {
             return true;
         }
 
-        if (board[0, 2] == mark && board[1, 1] == mark && board[2, 0] == mark)
+        if (board[GameConstants.LEFT_LINE, GameConstants.BOT_LINE] == mark && board[GameConstants.MID_LINE, GameConstants.MID_LINE] == mark && board[GameConstants.RIGHT_LINE, GameConstants.TOP_LINE] == mark)
         {
             return true;
         }
